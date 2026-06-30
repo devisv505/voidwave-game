@@ -34,6 +34,16 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <!-- pixel-art icon sprite (referenced below via <use>) -->
+  <svg class="px-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="px-discord" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M4 4H12L13 5V11L12 12H4L3 11V5L4 4ZM5.7 6.6H7.2V9.4H5.7ZM8.8 6.6H10.3V9.4H8.8ZM3.8 12H5.3V13.2H3.8ZM10.7 12H12.2V13.2H10.7Z"/></symbol>
+      <symbol id="px-youtube" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M3 4H13L14 5V11L13 12H3L2 11V5L3 4ZM6.4 6.4H7.6V9.6H6.4ZM7.6 7H8.6V9H7.6ZM8.6 7.5H9.4V8.5H8.6Z"/></symbol>
+      <symbol id="px-instagram" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M3 3H13V13H3ZM5 5H11V11H5ZM6.4 6.4H9.6V9.6H6.4ZM7.5 7.5H8.5V8.5H7.5ZM9.7 5.2H10.9V6.4H9.7Z"/></symbol>
+      <symbol id="px-steam" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M5 4H11L13 6V12L11 14H5L3 12V6L5 4ZM6.3 6.8H9.7V10.2H6.3ZM7.4 7.9H8.6V9.1H7.4Z"/></symbol>
+    </defs>
+  </svg>
+
   <!-- ambient background layers (decorative) -->
   <div class="bg" aria-hidden="true">
     <div class="bg-grid"></div>
@@ -60,18 +70,10 @@
       </nav>
 
       <div class="nav-actions">
-        <a class="social-ico" data-link="discord" href="#" aria-label="Discord" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.2.4a14.6 14.6 0 0 1 4.3 2.1 13.5 13.5 0 0 0-11-0A14.6 14.6 0 0 1 12.8 3.4L12.6 3A19.8 19.8 0 0 0 7.7 4.4 20.3 20.3 0 0 0 4 18a19.9 19.9 0 0 0 6 3l.7-1a13 13 0 0 1-2-1l.5-.4a14.3 14.3 0 0 0 11.6 0l.5.4a13 13 0 0 1-2 1l.7 1a19.9 19.9 0 0 0 6-3 20.3 20.3 0 0 0-3.7-13.6ZM9.7 14.7c-1 0-1.7-.9-1.7-2s.8-2 1.7-2 1.8 1 1.7 2-.8 2-1.7 2Zm4.6 0c-1 0-1.7-.9-1.7-2s.8-2 1.7-2 1.8 1 1.7 2-.8 2-1.7 2Z"/></svg>
-        </a>
-        <a class="social-ico" data-link="youtube" href="#" aria-label="YouTube" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 0 0 1.7-1.7C23 15.2 23 12 23 12ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg>
-        </a>
-        <a class="social-ico" data-link="instagram" href="#" aria-label="Instagram" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4a3.7 3.7 0 0 1-1.4-.9 3.7 3.7 0 0 1-.9-1.4c-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.2.8-.4.3-.6.7-.8 1.2-.2.4-.3 1-.4 2.1C2.8 9.8 2.8 10.2 2.8 12s0 2.2.1 3.4c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.2.3.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.2-.8.4-.3.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-3.4s0-2.2-.1-3.4c-.1-1.1-.2-1.7-.4-2.1a3 3 0 0 0-.8-1.2 3 3 0 0 0-1.2-.8c-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1Zm0 3.1a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8Zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2Zm5-3.3a1.1 1.1 0 1 1 0 2.3 1.1 1.1 0 0 1 0-2.3Z"/></svg>
-        </a>
-        <a class="btn btn-wishlist" data-link="steam" data-soon="Soon" href="#" target="_blank" rel="noopener">
-          <span class="btn-ico" aria-hidden="true">◢</span> <span class="btn-label">Wishlist</span>
-        </a>
+        <a class="social-ico" data-link="discord" href="#" aria-label="Discord" target="_blank" rel="noopener"><svg class="px-ico" width="20" height="20" aria-hidden="true"><use href="#px-discord"/></svg></a>
+        <a class="social-ico" data-link="youtube" href="#" aria-label="YouTube" target="_blank" rel="noopener"><svg class="px-ico" width="20" height="20" aria-hidden="true"><use href="#px-youtube"/></svg></a>
+        <a class="social-ico" data-link="instagram" href="#" aria-label="Instagram" target="_blank" rel="noopener"><svg class="px-ico" width="20" height="20" aria-hidden="true"><use href="#px-instagram"/></svg></a>
+        <a class="social-ico" data-link="steam" aria-label="Steam" target="_blank" rel="noopener"><svg class="px-ico" width="20" height="20" aria-hidden="true"><use href="#px-steam"/></svg></a>
       </div>
 
       <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
@@ -354,19 +356,19 @@
         </div>
         <div class="community-grid">
           <a class="card community-card reveal" data-link="discord" href="#" target="_blank" rel="noopener" data-accent="purple">
-            <span class="cc-ico"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.2.4a14.6 14.6 0 0 1 4.3 2.1 13.5 13.5 0 0 0-11-0A14.6 14.6 0 0 1 12.8 3.4L12.6 3A19.8 19.8 0 0 0 7.7 4.4 20.3 20.3 0 0 0 4 18a19.9 19.9 0 0 0 6 3l.7-1a13 13 0 0 1-2-1l.5-.4a14.3 14.3 0 0 0 11.6 0l.5.4a13 13 0 0 1-2 1l.7 1a19.9 19.9 0 0 0 6-3 20.3 20.3 0 0 0-3.7-13.6ZM9.7 14.7c-1 0-1.7-.9-1.7-2s.8-2 1.7-2 1.8 1 1.7 2-.8 2-1.7 2Zm4.6 0c-1 0-1.7-.9-1.7-2s.8-2 1.7-2 1.8 1 1.7 2-.8 2-1.7 2Z"/></svg></span>
+            <span class="cc-ico"><svg class="px-ico" width="30" height="30" aria-hidden="true"><use href="#px-discord"/></svg></span>
             <h3>Discord</h3>
             <p>Hang out, report bugs, shape the demo.</p>
             <span class="cc-go">Open invite →</span>
           </a>
           <a class="card community-card reveal" data-link="youtube" href="#" target="_blank" rel="noopener" data-accent="magenta">
-            <span class="cc-ico"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 0 0 1.7-1.7C23 15.2 23 12 23 12ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg></span>
+            <span class="cc-ico"><svg class="px-ico" width="30" height="30" aria-hidden="true"><use href="#px-youtube"/></svg></span>
             <h3>YouTube</h3>
             <p>Trailers, devlogs and gameplay deep-dives.</p>
             <span class="cc-go">Subscribe →</span>
           </a>
           <a class="card community-card reveal" data-link="instagram" href="#" target="_blank" rel="noopener" data-accent="cyan">
-            <span class="cc-ico"><svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4a3.7 3.7 0 0 1-1.4-.9 3.7 3.7 0 0 1-.9-1.4c-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 3.6a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4Zm0 1.8a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8Zm6.4-2.9a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9Z"/></svg></span>
+            <span class="cc-ico"><svg class="px-ico" width="30" height="30" aria-hidden="true"><use href="#px-instagram"/></svg></span>
             <h3>Instagram</h3>
             <p>Screenshots, GIFs and behind-the-scenes.</p>
             <span class="cc-go">Follow →</span>
@@ -410,9 +412,10 @@
         <a href="presskit.html">Press kit</a>
       </nav>
       <div class="footer-social">
-        <a class="social-ico" data-link="discord" href="#" aria-label="Discord" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.2.4a14.6 14.6 0 0 1 4.3 2.1 13.5 13.5 0 0 0-11-0A14.6 14.6 0 0 1 12.8 3.4L12.6 3A19.8 19.8 0 0 0 7.7 4.4 20.3 20.3 0 0 0 4 18a19.9 19.9 0 0 0 6 3l.7-1a13 13 0 0 1-2-1l.5-.4a14.3 14.3 0 0 0 11.6 0l.5.4a13 13 0 0 1-2 1l.7 1a19.9 19.9 0 0 0 6-3 20.3 20.3 0 0 0-3.7-13.6ZM9.7 14.7c-1 0-1.7-.9-1.7-2s.8-2 1.7-2 1.8 1 1.7 2-.8 2-1.7 2Zm4.6 0c-1 0-1.7-.9-1.7-2s.8-2 1.7-2 1.8 1 1.7 2-.8 2-1.7 2Z"/></svg></a>
-        <a class="social-ico" data-link="youtube" href="#" aria-label="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.7-1.7C19.3 5.2 12 5.2 12 5.2s-7.3 0-8.9.4A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.7 1.7c1.6.4 8.9.4 8.9.4s7.3 0 8.9-.4a2.5 2.5 0 0 0 1.7-1.7C23 15.2 23 12 23 12ZM9.8 15.3V8.7l5.7 3.3-5.7 3.3Z"/></svg></a>
-        <a class="social-ico" data-link="instagram" href="#" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.1.4.3 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.1-1 .3-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4a3.7 3.7 0 0 1-1.4-.9 3.7 3.7 0 0 1-.9-1.4c-.1-.4-.3-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.1 1-.3 2.2-.4C8.4 2.2 8.8 2.2 12 2.2Zm0 3.6a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4Zm0 1.8a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8Zm6.4-2.9a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9Z"/></svg></a>
+        <a class="social-ico" data-link="discord" href="#" aria-label="Discord" target="_blank" rel="noopener"><svg class="px-ico" width="20" height="20" aria-hidden="true"><use href="#px-discord"/></svg></a>
+        <a class="social-ico" data-link="youtube" href="#" aria-label="YouTube" target="_blank" rel="noopener"><svg class="px-ico" width="20" height="20" aria-hidden="true"><use href="#px-youtube"/></svg></a>
+        <a class="social-ico" data-link="instagram" href="#" aria-label="Instagram" target="_blank" rel="noopener"><svg class="px-ico" width="20" height="20" aria-hidden="true"><use href="#px-instagram"/></svg></a>
+        <a class="social-ico" data-link="steam" aria-label="Steam" target="_blank" rel="noopener"><svg class="px-ico" width="20" height="20" aria-hidden="true"><use href="#px-steam"/></svg></a>
       </div>
     </div>
     <div class="wrap footer-bottom">

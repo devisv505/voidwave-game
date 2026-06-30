@@ -32,10 +32,13 @@
     }
   }
 
-  /* ---- Steam buttons: live wishlist link OR a "Coming soon" block ---- */
+  /* ---- Steam links/buttons ----
+     • CTA buttons (have data-soon) → live wishlist link OR a "Coming soon" block
+     • plain Steam icons (no data-soon) → live link OR an inert icon (no "soon") ---- */
   function applySteam() {
     var ready = steamReady();
     document.querySelectorAll('[data-link="steam"]').forEach(function (el) {
+      var isCta = el.hasAttribute('data-soon');
       var label = el.querySelector('.btn-label');
       if (ready) {
         el.setAttribute('href', CFG.links.steam);
@@ -44,13 +47,19 @@
         el.classList.remove('is-soon');
         el.removeAttribute('aria-disabled');
         if (label && el.dataset.liveLabel) { label.textContent = el.dataset.liveLabel; }
-      } else {
+      } else if (isCta) {
         if (label) {
           el.dataset.liveLabel = el.dataset.liveLabel || label.textContent;
           label.textContent = el.getAttribute('data-soon') || 'Coming soon';
         }
         el.classList.add('is-soon');
         el.removeAttribute('href');   // not a real link yet → inert, not focusable
+        el.removeAttribute('target');
+        el.removeAttribute('rel');
+        el.setAttribute('aria-disabled', 'true');
+      } else {
+        // plain Steam icon — just inert until a URL exists, no "soon" styling
+        el.removeAttribute('href');
         el.removeAttribute('target');
         el.removeAttribute('rel');
         el.setAttribute('aria-disabled', 'true');

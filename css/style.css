@@ -190,6 +190,10 @@ a { color: inherit; text-decoration: none; }
 }
 .social-ico:hover { color: var(--white); background: rgba(120,200,255,.08); transform: translateY(-2px); }
 
+/* pixel-art icons (sprite referenced via <use>) */
+.px-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.px-ico { display: block; color: inherit; shape-rendering: crispEdges; image-rendering: pixelated; }
+
 .nav-burger {
   display: none; flex-direction: column; gap: 5px; width: 42px; height: 38px;
   background: none; border: 1px solid var(--line); border-radius: 9px; cursor: pointer;
