@@ -1,0 +1,8 @@
+# robots.txt — VOIDWAVE
+# Allow every crawler to index the whole site.
+User-agent: *
+Allow: /
+
+# 👉 If you deploy somewhere other than voidwave.game (e.g. a github.io URL),
+#    change the domain on the Sitemap line below to match.
+Sitemap: https://voidwave.game/sitemap.xml
