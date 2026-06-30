@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VOIDWAVE — Press Kit</title>
+  <meta name="description" content="Press kit for VOIDWAVE — a 2D factory-automation survival game. Fact sheet, description, features, and assets for press and content creators." />
+  <meta name="theme-color" content="#060912" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Chakra+Petch:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .pk-wrap { max-width: 900px; margin-inline: auto; padding: 120px 24px 80px; }
+    .pk-back { font-family: var(--font-mono); color: var(--cyan); font-size: .9rem; }
+    .pk-back:hover { color: var(--cyan-bri); }
+    .pk-title { font-family: var(--font-disp); color: var(--white); font-size: clamp(1.6rem,5vw,2.6rem);
+      margin: 26px 0 6px; text-shadow: 0 0 30px rgba(56,225,255,.4); }
+    .pk-sub { font-family: var(--font-mono); color: var(--cyan-bri); letter-spacing: .1em; margin: 0 0 40px; }
+    .pk-block { border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 30px; margin-bottom: 22px;
+      background: linear-gradient(180deg, var(--panel), rgba(10,15,29,.5)); }
+    .pk-block h2 { font-family: var(--font-ui); font-weight: 700; color: var(--white); font-size: 1.4rem; margin: 0 0 16px; }
+    .pk-facts { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+    .pk-facts li { display: grid; grid-template-columns: 150px 1fr; gap: 14px; border-top: 1px solid var(--line-soft); padding-top: 10px; }
+    .pk-facts li:first-child { border-top: 0; padding-top: 0; }
+    .pk-facts b { color: var(--muted); font-weight: 500; font-family: var(--font-mono); font-size: .9rem; }
+    .pk-facts span { color: var(--text); }
+    .pk-block p { color: var(--muted); }
+    .pk-block p strong { color: var(--cyan-bri); }
+    .pk-list { color: var(--muted); padding-left: 20px; }
+    .pk-list li { margin-bottom: 8px; }
+    .pk-list li::marker { color: var(--cyan); }
+    .pk-assets { display: flex; gap: 14px; flex-wrap: wrap; }
+    .pk-note { font-family: var(--font-mono); font-size: .82rem; color: var(--dim); margin-top: 14px; }
+  </style>
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-scanlines"></div>
+    <div class="bg-vignette"></div>
+  </div>
+
+  <div class="pk-wrap">
+    <a class="pk-back" href="index.html">← back to voidwave.game</a>
+    <h1 class="pk-title">VOIDWAVE</h1>
+    <p class="pk-sub">PRESS KIT · belt automation in the dark</p>
+
+    <div class="pk-block">
+      <h2>Fact sheet</h2>
+      <ul class="pk-facts">
+        <li><b>Title</b><span>VOIDWAVE</span></li>
+        <li><b>Developer</b><span data-studio>DEV505</span></li>
+        <li><b>Genre</b><span>2D factory automation · survival · base defense</span></li>
+        <li><b>Platform</b><span>PC (Windows) — Steam</span></li>
+        <li><b>Engine</b><span>Unity</span></li>
+        <li><b>Release</b><span>Free demo coming soon · full game TBA</span></li>
+        <li><b>Price</b><span>Demo: free</span></li>
+        <li><b>Players</b><span>Single-player</span></li>
+      </ul>
+    </div>
+
+    <div class="pk-block">
+      <h2>The pitch</h2>
+      <p>VOIDWAVE is a 2D factory-automation survival game. You're a lone operator dropped onto a
+        dead planet with a pod and a hand-drill. Mine ore, smelt it, and lay belts so the work runs
+        itself — then build a wall of turrets and hold the line as the <strong>Void</strong> surges
+        out of the ground in escalating waves.</p>
+      <p>The loop is simple and relentless: <strong>mine, build, automate, survive the next wave —
+        then do it bigger.</strong> Every creature you kill drops a Void Core that powers your tech,
+        so progress literally requires killing more of the thing trying to kill you. The factory
+        grows because the threat grows.</p>
+    </div>
+
+    <div class="pk-block">
+      <h2>Key features</h2>
+      <ul class="pk-list">
+        <li><strong>Belt automation that scales</strong> — thousands of items moving at a steady 60 FPS across three belt tiers.</li>
+        <li><strong>A full production chain</strong> — smelters, constructors, assemblers, splitters, mergers and storage turn raw ore into turrets and weapons.</li>
+        <li><strong>Survive the Surge</strong> — waves of glitch-wireframe "Void" enemies pour from rifts you can't close, getting faster and tougher each time.</li>
+        <li><strong>Harvest-the-enemy progression</strong> — a 5-tier tech tree gated behind Void Cores dropped by the waves.</li>
+        <li><strong>A signal-glitch art style</strong> — custom shaders, VHS-tearline enemies, and a clear cyan-vs-magenta visual language.</li>
+      </ul>
+    </div>
+
+    <div class="pk-block">
+      <h2>Assets</h2>
+      <p>Logos, screenshots, gameplay clips and the fact sheet are available on request — and you have
+        blanket permission to capture, stream and monetise videos of VOIDWAVE.</p>
+      <div class="pk-assets">
+        <a class="btn btn-primary" data-link="steam" data-soon="Steam page — soon" href="#" target="_blank" rel="noopener"><span class="btn-label">Steam page</span></a>
+        <a class="btn btn-ghost" data-link="press" href="#">Request assets / contact</a>
+        <a class="btn btn-ghost" data-link="youtube" href="#" target="_blank" rel="noopener">Gameplay on YouTube</a>
+      </div>
+      <p class="pk-note">// Drop your downloadable press assets (logo pack, screenshots .zip) into /assets and link them here.</p>
+    </div>
+
+    <div class="pk-block">
+      <h2>Contact &amp; social</h2>
+      <ul class="pk-facts">
+        <li><b>Press / business</b><span><a data-link="press" href="#" style="color:var(--cyan)">email</a></span></li>
+        <li><b>Discord</b><span><a data-link="discord" href="#" target="_blank" rel="noopener" style="color:var(--cyan)">community invite</a></span></li>
+        <li><b>YouTube</b><span><a data-link="youtube" href="#" target="_blank" rel="noopener" style="color:var(--cyan)">channel</a></span></li>
+        <li><b>Instagram</b><span><a data-link="instagram" href="#" target="_blank" rel="noopener" style="color:var(--cyan)">profile</a></span></li>
+      </ul>
+    </div>
+
+    <p class="pk-note">© <span id="year">2026</span> <span data-studio>DEV505</span> — VOIDWAVE.</p>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
