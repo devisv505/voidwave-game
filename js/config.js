@@ -19,7 +19,7 @@
 window.VOIDWAVE = {
   links: {
     steam:     "",                                   // paste your Steam page URL when you have one
-    discord:   "https://discord.gg/He2xhEyNwB",      // ✓ live
+    discord:   "https://discord.gg/KGnstjDGEq",      // ✓ live
     instagram: "https://www.instagram.com/voidwavegame/", // ✓ live
     youtube:   "https://www.youtube.com/@devisv505",  // ✓ live
     twitter:   "",                                   // optional — "" hides it

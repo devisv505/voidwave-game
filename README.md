@@ -55,6 +55,23 @@ Then visit <http://localhost:8080>.
 
 No build command needed anywhere. Output directory is the project root.
 
+## 3a. Avoiding stale caches (important when you redeploy)
+
+Browsers aggressively cache `css`/`js`, so after you change a stylesheet or script, visitors
+can keep seeing the **old** version. The CSS/JS `<link>`/`<script>` tags carry a `?v=…`
+cache-buster token, and a script bumps it for you:
+
+```powershell
+./bump-version.ps1      # rewrites every ?v=… to a fresh timestamp
+git add -A
+git commit -m "update site"
+git push
+```
+
+Run `bump-version.ps1` **whenever you've edited `css/` or `js/`** (including `js/config.js`),
+right before you commit. It updates `index.html` + `presskit.html` so the new files are fetched
+fresh. (No bash? It's a one-liner — just hand-edit the `?v=2` numbers to anything new.)
+
 ## 4. Swapping media
 
 - **Hero background clip:** edit the `<source>` in `index.html` (`.hero-video`) to any file in `assets/video/`.

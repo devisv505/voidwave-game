@@ -6,3 +6,6 @@ desktop.ini
 
 # Local preview/tooling config (delete this line if you want to commit it)
 .claude/
+
+# MCP server config — contains the Discord bot token, keep it out of git
+.mcp.json
