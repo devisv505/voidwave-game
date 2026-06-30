@@ -389,8 +389,8 @@ a { color: inherit; text-decoration: none; }
 .feature-media .clip { width: 100%; height: 100%; object-fit: cover; }
 
 /* the void */
-.void-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
-.void-card { padding: 26px 18px; text-align: center; }
+.void-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+.void-card { flex: 1 1 160px; max-width: 200px; padding: 26px 18px; text-align: center; }
 .void-card:hover { transform: translateY(-6px); border-color: rgba(255,45,155,.45); box-shadow: 0 24px 50px -24px rgba(255,45,155,.3); }
 .void-card h3 { font-family: var(--font-ui); font-weight: 700; color: var(--white); font-size: 1.12rem; margin: 16px 0 4px; }
 .vc-role { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .08em; color: var(--pink); margin: 0 0 16px; text-transform: uppercase; }
