@@ -399,12 +399,35 @@ a { color: inherit; text-decoration: none; }
   border-top: 1px solid var(--line-soft); padding-top: 6px; }
 .vc-stats dt { color: var(--dim); margin: 0; }
 .vc-stats dd { color: var(--text); margin: 0; font-family: var(--font-mono); }
-/* animated wireframe enemies — rendered by js/enemies.js (matches the engine) */
+/* enemy roster — real in-game capture GIFs in a framed "specimen" window */
 .vc-gif {
   display: block; width: 118px; height: 118px; margin: 0 auto 8px;
   border-radius: 10px; border: 1px solid var(--line-soft);
   object-fit: cover; background: #0a0f1d;
 }
+
+/* "more incoming" teaser card — a glitching unknown specimen */
+.vc-unknown {
+  position: relative; display: grid; place-items: center; overflow: hidden;
+  width: 118px; height: 118px; margin: 0 auto 8px;
+  border-radius: 10px; border: 1px dashed rgba(255,91,176,.45); background: #0a0f1d;
+}
+.vc-unknown::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(transparent 0 3px, rgba(120,200,255,.06) 3px 4px);
+}
+.vc-q {
+  position: relative; font-family: var(--font-disp); font-size: 2.5rem; line-height: 1;
+  color: var(--white); text-shadow: 0 0 16px rgba(255,45,155,.6);
+  animation: qPulse 2.6s ease-in-out infinite;
+}
+.vc-q::before, .vc-q::after { content: '?'; position: absolute; inset: 0; mix-blend-mode: screen; }
+.vc-q::before { color: var(--cyan); animation: qGlitchA 3.2s infinite steps(2); }
+.vc-q::after { color: var(--magenta); animation: qGlitchB 2.6s infinite steps(2); }
+@keyframes qPulse { 0%,100% { opacity: .82; } 50% { opacity: 1; } }
+@keyframes qGlitchA { 0%,90%,100% { transform: translate(0); opacity: 0; } 92% { transform: translate(-3px,1px); opacity: .9; } 96% { transform: translate(2px,-1px); opacity: .6; } }
+@keyframes qGlitchB { 0%,88%,100% { transform: translate(0); opacity: 0; } 90% { transform: translate(3px,-1px); opacity: .9; } 95% { transform: translate(-2px,1px); opacity: .5; } }
+.void-card-more .vc-role { color: var(--cyan-bri); }
 
 /* media gallery */
 .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
