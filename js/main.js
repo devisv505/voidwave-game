@@ -85,19 +85,19 @@
     var nav = document.getElementById('nav');
     if (!nav) { return; } // e.g. the press-kit page has no nav bar
     var burger = document.getElementById('navBurger');
-    var links = document.getElementById('navLinks');
+    var menu = document.getElementById('navMenu');
     var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 24); };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    if (burger && links) {
+    if (burger && menu) {
       burger.addEventListener('click', function () {
-        var open = links.classList.toggle('open');
+        var open = menu.classList.toggle('open');
         burger.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
-      links.addEventListener('click', function (e) {
-        if (e.target.tagName === 'A') {
-          links.classList.remove('open');
+      menu.addEventListener('click', function (e) {
+        if (e.target.closest('a')) {   // any link (incl. social icons) closes the menu
+          menu.classList.remove('open');
           burger.setAttribute('aria-expanded', 'false');
         }
       });
