@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VOIDWAVE</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#060912" />
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Chakra+Petch:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+  <!-- reuse the main site's styles so the logo + glitch effect are identical -->
+  <link rel="stylesheet" href="css/style.css?v=202607012142" />
+
+  <style>
+    /* full-screen, dead-centre, nothing else */
+    .splash {
+      position: relative; z-index: 1;
+      min-height: 100svh; display: grid; place-items: center;
+      padding: 24px; text-align: center;
+    }
+    .splash .hero-title {
+      margin: 0;
+      font-size: clamp(1.8rem, 9vw, 6rem);
+    }
+  </style>
+</head>
+<body>
+  <!-- same ambient void background as the main page -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-blocks" id="bgBlocks"></div>
+    <div class="bg-scanlines"></div>
+    <div class="bg-vignette"></div>
+  </div>
+
+  <main class="splash">
+    <h1 class="hero-title glitch" data-text="VOIDWAVE">VOIDWAVE</h1>
+  </main>
+
+  <script>
+    /* drifting background blocks — the same effect as the main page */
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { return; }
+      var host = document.getElementById('bgBlocks');
+      if (!host) { return; }
+      var n = window.innerWidth < 720 ? 7 : 14;
+      var frag = document.createDocumentFragment();
+      for (var i = 0; i < n; i++) {
+        var b = document.createElement('i');
+        var size = 14 + Math.random() * 60;
+        b.style.left = (Math.random() * 100) + 'vw';
+        b.style.width = size + 'px';
+        b.style.height = size + 'px';
+        b.style.bottom = '-80px';
+        b.style.animationDuration = (16 + Math.random() * 26) + 's';
+        b.style.animationDelay = (-Math.random() * 30) + 's';
+        b.style.opacity = (0.25 + Math.random() * 0.5).toFixed(2);
+        frag.appendChild(b);
+      }
+      host.appendChild(frag);
+    })();
+  </script>
+</body>
+</html>
